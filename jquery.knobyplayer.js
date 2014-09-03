@@ -1,5 +1,4 @@
 /**
- * rehrh
  * Version : 1.0
  * Par Jean-Christophe "Jissaii" PUGINIER
  * https://github.com/Jissaii/knobyPlayer
@@ -18,9 +17,9 @@
 			var player = document.querySelector('#monplayer'),
 		    $playerJQ = $this;
 		    $timerBar = $('#timer'),
-		    $valueTemps = $('#valueTemps')
+		    $valueTemps = $('#valueTemps'),
 			btnPlay = $('#play'),
-			btnStop = document.querySelector('#stop')
+			btnStop = document.querySelector('#stop'),
 			slideVolume = document.querySelector('#volume'),
 			//slideVolumeValue = document.querySelector('#affichageVolume'),
 			timerBar = document.querySelector('.temps'),
@@ -31,7 +30,6 @@
 		// Fonctions
 		var init = function() {
 			slideVolume.value = player.volume * 100;
-			//slideVolumeValue.innerHTML = slideVolume.value + '%';
 			timerBar.value = 0;
 		}
 
@@ -54,20 +52,15 @@
 		}
 
 		var ChangerVolume = function(volumeValue) {
-			console.log('Volume change.');
-			console.log('Value : '+ volumeValue)
 			player.volume = volumeValue / 100;
 			//slideVolumeValue.innerHTML = slideVolume.value + '%';
 		}
 
 		var ChangerTemps = function(tempsValue) {
-			console.log('tempsValue : '+ tempsValue)
-
 			//Diviser le slider par 100 pour avoir une valeur comprise
 			//comprise entre 0 et 1
 
 			var timerBarParCent = tempsValue / 100;
-			console.log('timerBarParCent : '+ timerBarParCent)
 
 			//Multiplier le temps total par la valeur d'au dessus
 			//Admettons que la musique fasse 100s., on veut aller au milieu
